@@ -1,0 +1,6 @@
+{
+  "require" : {
+    "braintree/braintree_php":
+  }
+}
+
