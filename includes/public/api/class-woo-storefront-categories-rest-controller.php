@@ -1,12 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: brianna
+ * User: Brianna Zamora
  * Date: 5/4/18
  * Time: 4:04 PM
  */
 
-class Woo_OS_Categories_REST_Controller extends WC_REST_Product_Categories_Controller {
+class Woo_Storefront_Categories_REST_Controller extends WC_REST_Product_Categories_Controller {
 
 	protected $namespace = 'wc/v2';
 	protected $route = '/products/categories/public';
@@ -56,7 +56,7 @@ class Woo_OS_Categories_REST_Controller extends WC_REST_Product_Categories_Contr
 		}
 
 		if ( empty( $data ) ) {
-			return new WP_Error( 'No categories found', __( 'The requested product categories were not found', array( 'status' => '200' ) ) );
+			return new WP_Error( 'No categories found', __( 'The requested product categories were not found', array( 'status' => '204' ) ) );
 		}
 
 		return new WP_REST_Response( $data, 200 );
@@ -89,7 +89,7 @@ class Woo_OS_Categories_REST_Controller extends WC_REST_Product_Categories_Contr
 
 }
 
-function register_woo_os_public_products_REST_controller() {
-	$controller = new Woo_OS_Categories_REST_Controller();
+function register_woo_storefront_public_products_REST_controller() {
+	$controller = new Woo_Storefront_Categories_REST_Controller();
 	$controller->register_routes();
 }

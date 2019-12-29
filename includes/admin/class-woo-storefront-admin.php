@@ -76,7 +76,7 @@ class Woo_OS_Admin
          * class.
          */
 
-        wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/woo-os-admin.css', array(), $this->version, 'all');
+        wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/woo-storefront-admin.css', array(), $this->version, 'all');
 
     }
 
@@ -100,7 +100,7 @@ class Woo_OS_Admin
          * class.
          */
 
-        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/woo-os-admin.js', array('jquery'), $this->version, false);
+        wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/woo-storefront-admin.js', array('jquery'), $this->version, false);
 
     }
 
@@ -138,7 +138,7 @@ class Woo_OS_Admin
 		    wp_die( __('You do not have sufficient permissions to access this page. Please contact an admin of this site to gain access.') );
 	    }
 
-        include_once( 'partials/woo-os-main-page-display.php' );
+        include_once('partials/woo-storefront-main-page-display.php');
     }
 
     public function handle_general_settings_form( $input )

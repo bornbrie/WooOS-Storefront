@@ -8,8 +8,8 @@
  * @link       https://github.com/bornbrie
  * @since      1.0.0
  *
- * @package    Woo_Os
- * @subpackage Woo_Os/public/partials
+ * @package    Woo_Storefront
+ * @subpackage Woo_Storefront/public/partials
  */
 ?>
 

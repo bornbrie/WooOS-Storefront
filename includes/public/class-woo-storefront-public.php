@@ -3,24 +3,16 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://github.com/bornbrie
- * @since      1.0.0
- *
- * @package    Woo_Os
- * @subpackage Woo_Os/public
- */
-
-/**
- * The public-facing functionality of the plugin.
- *
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Woo_Os
- * @subpackage Woo_Os/public
- * @author     Brianna Lee <bornbrie@icloud.com>
+ * @link       https://github.com/bornbrie
+ * @since      1.0.0
+ * @package    Woo_Storefront
+ * @subpackage Woo_Storefront/public
+ * @author     Brianna Zamora <bornbrie@icloud.com>
  */
-class Woo_OS_Public {
+class Woo_Storefront_Public {
 
 	/**
 	 * The ID of this plugin.
@@ -65,15 +57,15 @@ class Woo_OS_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Woo_Os_Loader as all of the hooks are defined
+		 * defined in Woo_Storefront_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Woo_Os_Loader will then create the relationship
+		 * The Woo_Storefront_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/woo-os-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/woo-storefront-public.css', array(), $this->version, 'all' );
 
 	}
 
@@ -88,22 +80,22 @@ class Woo_OS_Public {
 		 * This function is provided for demonstration purposes only.
 		 *
 		 * An instance of this class should be passed to the run() function
-		 * defined in Woo_Os_Loader as all of the hooks are defined
+		 * defined in Woo_Storefront_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The Woo_Os_Loader will then create the relationship
+		 * The Woo_Storefront_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/woo-os-public.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/woo-storefront-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 
-	public function woo_os_public_api_init() {
-		include_once( dirname( __FILE__ ) . '/api/class-woo-os-rest-api.php' );
-//		$api = new Woo_OS_Rest_API();
-//		$api->woo_os_rest_api_init();
+	public function woo_storefront_public_api_init() {
+		include_once( dirname( __FILE__ ) . '/api/class-woo-storefront-rest-api.php' );
+		$api = new Woo_Storefront_Rest_API();
+		$api->woo_storefront_rest_api_init();
 	}
 
 }

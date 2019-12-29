@@ -6,8 +6,8 @@
  * @link       https://github.com/bornbrie
  * @since      1.0.0
  *
- * @package    Woo_Os
- * @subpackage Woo_Os/includes
+ * @package    Woo_Storefront
+ * @subpackage Woo_Storefront/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Woo_Os
- * @subpackage Woo_Os/includes
- * @author     Brianna Lee <bornbrie@icloud.com>
+ * @package    Woo_Storefront
+ * @subpackage Woo_Storefront/includes
+ * @author     Brianna Zamora <bornbrie@icloud.com>
  */
-class Woo_OS_Loader {
+class Woo_Storefront_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

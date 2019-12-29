@@ -6,10 +6,10 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
- * @link       https://github.com/bornbrie
+
  * @since      1.0.0
  *
- * @package    Woo_Os
+ * @package    Woo_
  * @subpackage Woo_Os/includes
  */
 
@@ -19,12 +19,13 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
+ * @link       https://github.com/bornbrie
  * @since      1.0.0
- * @package    Woo_Os
- * @subpackage Woo_Os/includes
+ * @package    Woo_Storefront
+ * @subpackage Woo_Storefront/includes
  * @author     Brianna Lee <bornbrie@icloud.com>
  */
-class Woo_OS_i18n {
+class Woo_Storefront_i18n {
 
 
 	/**
@@ -35,7 +36,7 @@ class Woo_OS_i18n {
 	public function load_plugin_textdomain() {
 
 		load_plugin_textdomain(
-			'woo-os',
+			'woo-storefront',
 			false,
 			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
 		);

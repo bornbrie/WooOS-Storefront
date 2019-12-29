@@ -22,7 +22,7 @@
  * @link       https://github.com/bornbrie
  * @since      1.0.0
  *
- * @package    Woo_Os
+ * @package    Woo_Storefront
  */
 
 // If uninstall not called from WordPress, then exit.

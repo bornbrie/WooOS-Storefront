@@ -39,15 +39,15 @@ function woo_os_admin_tabs_content( $current = 'general' ) {
         woo_os_admin_tabs_content( $tab );
 
         if ( $tab == 'general' ) {
-            include_once( 'woo-os-general-settings-display.php' );
+            include_once('woo-storefront-general-settings-display.php');
 
         }
         else if ( $tab == 'authentication' ) {
-	        include_once( 'woo-os-authentication-display.php' );
+	        include_once('woo-storefront-authentication-display.php');
 
         }
         else if ( $tab == 'braintree' ) {
-	        include_once( 'woo-os-braintree-display.php' );
+	        include_once('woo-storefront-braintree-display.php');
 
         }
         else {

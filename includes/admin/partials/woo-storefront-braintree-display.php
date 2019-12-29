@@ -1,6 +1,6 @@
 <h1>Braintree Server Settings</h1>
 
-<form action="<?php echo esc_url( admin_url( 'admin-post.php') ); ?>" method="post" id="woo-os-braintree-settings-form">
+<form action="<?php echo esc_url( admin_url( 'admin-post.php') ); ?>" method="post" id="woo-storefront-braintree-settings-form">
 	<br>
     <fieldset>
         <legend>

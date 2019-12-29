@@ -1,16 +1,4 @@
 <?php
-/**
- * The file that defines the core plugin class
- *
- * A class definition that includes attributes and functions used across both the
- * public-facing side of the site and the admin area.
- *
- * @link       https://github.com/bornbrie
- * @since      1.0.0
- *
- * @package    Woo_Os
- * @subpackage Woo_Os/includes
- */
 
 /**
  * The core plugin class.
@@ -22,11 +10,12 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Woo_OS
- * @subpackage Woo_OS/includes
- * @author     Brianna Lee <bornbrie@icloud.com>
+ * @link       https://github.com/bornbrie
+ * @package    Woo_Storefront
+ * @subpackage Woo_Storefront/includes
+ * @author     Brianna Zamora <bornbrie@icloud.com>
  */
-class Woo_OS {
+class Woo_Storefront {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -34,7 +23,7 @@ class Woo_OS {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Woo_Os_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Woo_Storefront_Loader    $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -58,8 +47,6 @@ class Woo_OS {
 
 	protected $url;
 
-
-
 	/**
 	 * Define the core functionality of the plugin.
 	 *
@@ -75,10 +62,10 @@ class Woo_OS {
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'woo-os';
+		$this->plugin_name = 'woo-storefront';
 
 		$this->load_dependencies();
-		$this->loader = new Woo_OS_Loader();
+		$this->loader = new Woo_Storefront_Loader();
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
@@ -90,10 +77,10 @@ class Woo_OS {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Woo_Os_Loader. Orchestrates the hooks of the plugin.
-	 * - Woo_Os_i18n. Defines internationalization functionality.
-	 * - Woo_Os_Admin. Defines all hooks for the admin area.
-	 * - Woo_Os_Public. Defines all hooks for the public side of the site.
+	 * - Woo_Storefront_Loader. Orchestrates the hooks of the plugin.
+	 * - Woo_Storefront_i18n. Defines internationalization functionality.
+	 * - Woo_Storefront_Admin. Defines all hooks for the admin area.
+	 * - Woo_Storefront_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -107,31 +94,31 @@ class Woo_OS {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once dirname( __FILE__ ) . '/class-woo-os-loader.php';
+		require_once dirname( __FILE__ ) . '/class-woo-storefront-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once dirname( __FILE__ ) . '/class-woo-os-i18n.php';
+		require_once dirname( __FILE__ ) . '/class-woo-storefront-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once dirname( __FILE__ ) . '/admin/class-woo-os-admin.php';
+		require_once dirname( __FILE__ ) . '/admin/class-woo-storefront-admin.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once dirname( __FILE__ ) . '/public/class-woo-os-public.php';
+		require_once dirname( __FILE__ ) . '/public/class-woo-storefront-public.php';
 
 	}
 
 	/**
 	 * Define the locale for this plugin for internationalization.
 	 *
-	 * Uses the Woo_Os_i18n class in order to set the domain and to register the hook
+	 * Uses the Woo_Storefront_i18n class in order to set the domain and to register the hook
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
@@ -139,7 +126,7 @@ class Woo_OS {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Woo_OS_i18n();
+		$plugin_i18n = new Woo_Storefront_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -154,7 +141,7 @@ class Woo_OS {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Woo_OS_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Woo_Storefront_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -185,12 +172,12 @@ class Woo_OS {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Woo_OS_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Woo_Storefront_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
-		$this->loader->add_action( 'rest_api_init', $plugin_public, 'woo_os_public_api_init' );
+		$this->loader->add_action( 'rest_api_init', $plugin_public, 'woo_storefront_public_api_init' );
 
 	}
 
@@ -218,7 +205,7 @@ class Woo_OS {
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Woo_Os_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Woo_Storefront_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

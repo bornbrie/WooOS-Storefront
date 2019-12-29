@@ -1,12 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: brianna
+ * User: Brianna Zamora
  * Date: 5/6/18
  * Time: 8:47 PM
  */
 
-class Woo_OS_Braintree_Controller
+class Woo_Storefront_Braintree_Controller
 {
 	var $is_sandboxed;
 
@@ -55,7 +55,7 @@ class Woo_OS_Braintree_Controller
 	}
 
 	/**
-	 * Woo_Os_Braintree_Controller constructor.
+	 * Woo_Storefront_Braintree_Controller constructor.
 	 *
 	 * @param $sandboxed
 	 * @param $merchant_id
@@ -117,7 +117,7 @@ class Woo_OS_Braintree_Controller
 
 		// Write code to check if the string is available in DB
 		$mysqli = new mysqli(SERVER, DBUSER, DBPASS, DATABASE);
-		$result = $mysqli->query("SELECT id FROM $wpdb->prefix . 'woo_os' WHERE braintree_token = $randomString");
+		$result = $mysqli->query("SELECT id FROM $wpdb->prefix . 'woo_storefront' WHERE braintree_token = $randomString");
 		if ( $result->num_rows == 0)
 		{
 			// Nothing found, safe to write string to db.
@@ -135,7 +135,7 @@ class Woo_OS_Braintree_Controller
 
 		$current_user_id = get_current_user_id();
 
-		$table_name = $wpdb->prefix . 'woo_os';
+		$table_name = $wpdb->prefix . 'woo_storefront';
 		$wpdb->insert(
 			$table_name,
 			array(

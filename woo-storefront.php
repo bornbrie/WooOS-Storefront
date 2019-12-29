@@ -10,18 +10,18 @@
  *
  * @link              https://github.com/bornbrie
  * @since             1.0.0
- * @package           Woo_Os
+ * @package           WooStorefront
  *
  * @wordpress-plugin
- * Plugin Name:       WooOS
- * Plugin URI:        https://github.com/bornbrie/WooOS-Wordpress
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Plugin Name:       WooStorefront
+ * Plugin URI:        https://github.com/bornbrie/WooStorefront
+ * Description:       WooStorefront enables a set of public facing WooCommerce API endpoints, extended using the WP-API protocols. It allows both a browse and checkout flow for your WooCommerce store via the API while logged in as a customer.
  * Version:           1.0.0
  * Author:            Brianna Lee
  * Author URI:        https://github.com/bornbrie
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       woo-os
+ * Text Domain:       woo-storefront
  * Domain Path:       /languages
  */
 
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'WOO_OS_V1', '1.0.0' );
+define( 'WOO_STOREFRONT_V1', '1.0.0' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -52,10 +52,10 @@ require dirname( __FILE__ ) . '/includes/class-woo-os.php';
  *
  * @since    1.0.0
  */
-function run_woo_os() {
+function run_woo_storefront() {
 
-	$plugin = new Woo_OS();
+	$plugin = new Woo_Storefront();
 	$plugin->run();
 
 }
-run_woo_os();
+run_woo_storefront();

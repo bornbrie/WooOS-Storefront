@@ -8,7 +8,7 @@ Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-WooStorefront enables a set of public facing WooCommerce API endpoints, extended using the WP-API protocols. This allows a browse and checkout flow for your WooCommerce store via the API while logged in as a customer.
+WooStorefront enables a set of public facing WooCommerce API endpoints, extended using the WP-API protocols. It allows both a browse and checkout flow for your WooCommerce store via the API while logged in as a customer.
 
 == Description ==
 

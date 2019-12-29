@@ -1,12 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: brianna
+ * User: Brianna Zamora
  * Date: 5/4/18
  * Time: 4:04 PM
  */
 
-class Woo_OS_Products_REST_Controller extends WC_REST_Products_Controller {
+class Woo_Storefront_Products_REST_Controller extends WC_REST_Products_Controller {
 
 	protected $namespace = '/wc/v2';
 	protected $route = '/products/public';
@@ -94,7 +94,7 @@ class Woo_OS_Products_REST_Controller extends WC_REST_Products_Controller {
 		}
 
 		if ( empty( $data ) ) {
-			return new WP_Error( 'No products found', __( 'The requested products were not found', array( 'status' => '404' ) ) );
+			return new WP_Error( 'No products found', __( 'The requested products were not found', array( 'status' => '204' ) ) );
 		}
 
 		return new WP_REST_Response( $data, 200 );
@@ -302,7 +302,6 @@ class Woo_OS_Products_REST_Controller extends WC_REST_Products_Controller {
 		if ( is_user_logged_in() ) {
 			$status = 403;
 		}
-
 		return $status;
 	}
 
